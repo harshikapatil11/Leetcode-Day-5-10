@@ -1,0 +1,12 @@
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        n = len(s)
+        new_string = []
+        
+        for i in range(n):
+            if s[i] != ' ':
+                new_string.append(s[i])
+            elif i < n - 1 and s[i] == ' ' and s[i + 1] != ' ':
+                new_string = [] 
+        
+        return len(new_string)
