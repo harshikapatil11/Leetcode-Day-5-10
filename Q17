@@ -1,0 +1,11 @@
+class Solution(object):
+    def reverseWords(self, s):
+        sliced_word = s.split()  
+
+        for i in range(len(sliced_word)):  
+            sliced_word[i] = sliced_word[i]  
+
+        j = len(sliced_word) - 1  
+
+        for j in range(len(sliced_word) - 1, -1, -1):  
+            return " ".join(sliced_word[::-1])  
