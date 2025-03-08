@@ -1,0 +1,28 @@
+class Solution(object):
+    def twoSum(self, numbers, target):
+        
+        
+        total_sum=0
+        left=0
+        right=len(numbers)-1
+
+        while left<right:
+            total_sum=numbers[left]+numbers[right]
+
+            if total_sum==target:
+                return [left+1,right+1]
+
+            elif total_sum < target:
+                left += 1  
+
+            elif total_sum>target:
+                total_sum-=max(numbers[left],numbers[right])
+                right-=1
+
+            else:
+                right -= 1
+
+        return []
+
+
+        
