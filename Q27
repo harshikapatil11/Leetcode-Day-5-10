@@ -1,0 +1,13 @@
+from itertools import permutations
+
+class Solution(object):
+    def findSubstring(self, s, words):
+        wordsString = set("".join(p) for p in permutations(words))  
+        wordLength = len(words[0]) * len(words)
+        result = []
+
+        for i in range(len(s) - wordLength + 1):
+            if s[i:i + wordLength] in wordsString:
+                result.append(i)
+
+        return result
