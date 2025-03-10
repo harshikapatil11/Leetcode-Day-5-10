@@ -1,0 +1,21 @@
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        last_seen = {} 
+        start = 0 
+        max_len = 0 
+
+        for end in range(len(s)):  
+            header = s[end]  
+
+           
+            if header in last_seen:
+                start = max(start, last_seen[header] + 1)
+
+           
+            last_seen[header] = end
+
+           
+            max_len = max(max_len, end - start + 1)
+
+        return max_len
+        
